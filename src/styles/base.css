@@ -1,0 +1,29 @@
+
+.f12 {font-size: 12px;}
+.f14 {font-size: 14px;}
+.f16 {font-size: 16px;}
+.f18 {font-size: 18px;}
+
+.flp1{ letter-spacing: 1px; }
+.flp2{ letter-spacing: 2px; }
+
+.tit1 {color: #333333;font-size: 14px;}
+
+
+.text1 {color: #666666; font-weight: 200}
+
+
+.color_h1{ color: #333333 }
+.color_h2{ color: #444444 }
+.color_h3{ color: #666666 }
+.color_h4{ color: #888888 }
+.color_h5{ color: #999999 }
+.color_h6{ color: #aaaaaa }
+.color_h7{ color: #eeeeee }
+.color_h8{ color: #ffffff }
+
+body{
+  background-color: #f1f4f5!important;
+}
+input:focus{outline:none;}
+

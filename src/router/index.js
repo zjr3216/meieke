@@ -11,7 +11,7 @@ const CodeTemp = r => require.ensure([], () => r(require('../views/Temp/CodeTemp
 const MemberVIP = r => require.ensure([], () => r(require('../views/PersonCenter/MemberVIP.vue')), 'personcenter')
 const ImgTest = r => require.ensure([], () => r(require('../views/Test/ImgTest.vue')), 'test')
 const PersonHome1 = r => require.ensure([], () => r(require('../views/PersonHome/PersonHome.vue')), 'personhome')
-const ActivePage = r => require.ensure([], () => r(require('../views/PersonCenter/ActivePage.vue')), 'personcenter')
+// const ActivePage = r => require.ensure([], () => r(require('../views/PersonCenter/ActivePage.vue')), 'personcenter')
 const Article1 = r => require.ensure([], () => r(require('../views/ArticlePage/Article1.vue')), 'personcenter')
 const ClubInfo = r => require.ensure([], () => r(require('../views/PersonCenter/ClubInfo.vue')), 'personcenter')
 const ClubT = r => require.ensure([], () => r(require('../views/PersonCenter/ClubT.vue')), 'personcenter')
@@ -152,11 +152,11 @@ export default new Router({
       name: 'ArticlePage',
       component: ArticlePage
     },
-    {
-      path: '/person/active',
-      name: 'ActivePage',
-      component: ActivePage
-    },
+    // {
+    //   path: '/person/active',
+    //   name: 'ActivePage',
+    //   component: ActivePage
+    // },
     {
       path: '/article/:id/userid/:userid',
       name: 'Active1',

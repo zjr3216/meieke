@@ -47,11 +47,11 @@
         <p class="icon_text" style="margin-right:  20px;color: #f74c31;" v-show="isVip === 0 ? false : true">已开通</p>
         <p class="icon_text" style="margin-right:  20px;" v-show="isVip === 1 ? false : true">未开通</p>
       </div>
-      <div class="line_box" @click="toActivlePage()">
+      <div class="line_box" @click="toActivlePage(url)">
         <svg class="icon3" aria-hidden="true">
           <use xlink:href="#icon-huodong"></use>
         </svg>
-        <p class="text1 f12">活动中心</p>
+        <p class="text1 f12">获取你的推广二维码</p>
         <i class="rightjt iconfont icon-mjiantou"></i>
       </div>
 
@@ -140,7 +140,8 @@
         vTime: 60,
         person_home: '',
         isVip: 0,
-        vipdate: 0
+        vipdate: 0,
+        url: ''
       }
     },
     /***
@@ -202,6 +203,16 @@
         }
         t.myStorage.setLocal('openid', data.data.user[0].openid)
         that.person_home = 'http://dmyzs.test.juefei88.com/h5/ph/#/' + data.data.user[0].openid
+      })
+      t.xhr.getPost({
+        siteId: 1,
+        act: 'wx/qrcodeurl',
+        data: {
+          openid: t.myStorage.getLocal('openid')
+        }
+      }, function (data) {
+        t.l(data, 111)
+        that.url = data.data
       })
       this.$nextTick(function () {
         setTimeout(function () {
@@ -300,8 +311,8 @@
           })
         }
       },
-      toActivlePage () {
-        this.$router.push('/person/active')
+      toActivlePage (url) {
+        document.location.href = url
       },
       toClubInfo () {
         this.$router.push('/person/clubinfo')
